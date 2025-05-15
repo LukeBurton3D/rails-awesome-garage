@@ -1,0 +1,25 @@
+<h1><%= "#{@car.brand} #{@car.model}" %></h1>
+<h2><%= @car.year %></h2>
+<h2><%= @car.fuel %></h2>
+<h3><%= @car.owner.name %></h3>
+
+<% if @car.favourites.empty? %>
+  <%= simple_form_for [@car, @favourite] do |f| %>
+    <%= f.submit '❤' %>
+  <% end %>
+<% else %>
+  <p>This car is in your garage</p>
+<% end %>
+
+<hr>
+<%= simple_form_for [@car, @review] do |f| %>
+  <%= f.input "comment" %>
+  <%= f.input :rating, collection: 1..5 %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+<hr>
+<% @car.reviews.each do |review| %>
+  <%= review.comment %>
+  <%= '⭐' * review.rating %>
+  <hr>
+<% end %>

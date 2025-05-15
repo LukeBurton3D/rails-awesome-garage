@@ -16,10 +16,12 @@ Favourite.destroy_all
 puts "Creating cars..."
 owner1 = Owner.create!(name: "Luke")
 owner2 = Owner.create!(name: "Anja")
-puts "hello"
+owner3 = Owner.create!(name: "Marco")
+owner4 = Owner.create!(name: "Daria")
+
 Car.create!(brand: "Ford", model: "Mustang", year: 2020, fuel: "Petrol", owner: owner1)
 Car.create!(brand: "Citroen", model: "C1", year: 2014, fuel: "Petrol", owner: owner2)
-Car.create!(brand: "Volkswagen", model: "Golf", year: 2019, fuel: "Electric", owner: owner2)
-Car.create!(brand: "Vauxhall", model: "Van", year: 2009, fuel: "Diesel", owner: owner1)
+Car.create!(brand: "Volkswagen", model: "Golf", year: 2019, fuel: "Electric", owner: owner3)
+Car.create!(brand: "Vauxhall", model: "Van", year: 2009, fuel: "Diesel", owner: owner4)
 
 puts "Created #{Car.count} cars"
