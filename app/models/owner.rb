@@ -1,3 +1,5 @@
 class Owner < ApplicationRecord
-  belongs_to :car
+  has_many :car
+
+  validates :name, presence: true
 end
